@@ -1,0 +1,63 @@
+# Put this file in your profile repo at:  .github/workflows/metrics.yml
+# Requires a repository secret named METRICS_TOKEN (see SETUP.md, Step 5).
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *"      # daily at midnight UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Base metrics panel
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: github-metrics.svg
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Kolkata
+          config_display: large
+
+          # ---- languages actually used ----
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used, recently-used
+
+          # ---- contribution calendar (the isometric one) ----
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # ---- commit habits ----
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+
+          # ---- achievements / ranks ----
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
+          plugin_achievements_display: compact
+
+          # ---- notable contributions ----
+          plugin_notable: yes
+          plugin_notable_types: commit
+
+          # ---- lines of code changed ----
+          plugin_lines: yes
+
+          # ---- starred topics (the icon grid) ----
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_limit: 0
