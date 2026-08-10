@@ -41,6 +41,29 @@
 
 ## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="28"> &nbsp;About Me
 
+I'm **Vishal**, an Electronics & Communication Engineer from Tamil Nadu, India.
+
+I like working across the **whole stack of a product** — from transistor-level IC
+design in Cadence Virtuoso, through schematic capture and PCB layout in KiCad,
+right up to the firmware running on an ESP32 or STM32. My most recent build is a
+**4-channel 230 V AC smart home controller** with per-channel current and voltage
+sensing, designed end-to-end in KiCad 9.
+
+Alongside my degree I've spent **5.5+ years in the field** — installing,
+configuring and troubleshooting computer hardware, networks, CCTV systems and
+biometric access control for real clients. That's taught me something a lab
+can't: how designs actually behave once they're on a wall in a dusty building.
+
+Right now I'm going deeper into **bare-metal STM32, FreeRTOS and Verilog**, and
+building full-stack tools with local LLMs on the side.
+
+> 🔧 *Comfortable with a soldering iron **and** a terminal.*
+
+<details>
+<summary><b>💾 vishal.c — the same thing, for the engineers</b></summary>
+
+<br/>
+
 ```c
 /* ---------------------------------------------------------
  *  vishal.c — a short introduction, compiled with -Wall
@@ -82,6 +105,8 @@ int main(void) {
     return 0;           /* never reached */
 }
 ```
+
+</details>
 
 <table>
 <tr>
